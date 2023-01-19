@@ -1,0 +1,33 @@
+.button {
+    text-decoration: none;
+    text-transform: uppercase;    
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 0;
+    display: inline-block;
+    width: 130px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+.button--crimson {    
+    color: #fff;
+    background-color: #B84C74;
+
+    &:hover {
+        color: #B84C74;
+        background-color: #fff;
+        border: 1px solid red;
+    }
+}
+
+.button--white {
+    color: #052E4C;
+    background-color: #fff;  
+    
+    &:hover {
+        color: #fff;
+        background-color: #052E4C;
+    }
+}

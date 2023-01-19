@@ -1,0 +1,233 @@
+.main-nav {
+    position: relative;
+    background-color: #fff;
+}
+
+.menu-opened .main-nav {
+    position: static;
+    transform: translateX(242px);
+}
+
+.main-nav__menu-wrapper {
+    display: none;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    background: #FCFCFC;
+}
+
+.menu--opened .main-nav__menu-wrapper {
+    display: block;
+}
+
+.main-nav__logo-wrapper {   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+    background: #FCFCFC;
+    position: relative;
+}
+
+.main-nav__logo {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.main-nav__logo-add {
+    display: none;
+}
+
+.main-nav__busket {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 50%;
+        z-index: 1;
+    }    
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("../img/icon-busket.svg");
+        z-index: 5;
+    }
+}
+
+.main-nav__list {
+    margin: 0;
+}
+
+.main-nav__toggle {  
+    position: relative;  
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;    
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 24px;
+        height: 2px;
+        background-color: #417A82;
+        box-shadow: 0 8px 0 0 #417A82, 0 16px 0 0 #417A82;
+    }
+}
+
+.main-nav__toggle--active::before,
+.main-nav__toggle--active::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  width: 24px;
+  height: 2px;
+  background-color: #417A82;
+}
+
+.main-nav__toggle--active::before {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  box-shadow: none;
+}
+
+.main-nav__toggle--active::after {
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+    box-shadow: none;
+  }
+
+.main-nav__address {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.main-nav__name {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.main-nav__phone {
+    display: block;
+    color: #417A82;
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.main-nav__link-wrap .button {
+    display: none;
+}
+
+@media (min-width: $tablet-width) {
+   .main-nav__logo {
+    display: none;
+   }
+
+   .main-nav__logo-wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+   }
+
+   .main-nav__link-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+    .main-nav__link-wrap .button  {
+      display: block;
+      background-color: #B84C74;
+      color: #fff;
+      margin-right: 20px;
+
+      &:hover {
+        color: #B84C74;
+        background-color: #fff;
+        }
+    }    
+}    
+
+@media (min-width: $desktop-width) {
+    .main-nav__logo-wrapper {
+        position: relative;
+        width: 1120px;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background-color: transparent;
+        z-index: 50;
+    }     
+
+    .menu--opened .main-nav__logo-add {
+        display: block;
+        padding-top: 6px;
+        padding-bottom: 5px;
+        width: 30px;
+        height: 19px;
+        border-radius: 50%;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 10px;
+        text-align: center;
+        background-color: #B84C74;
+    }
+
+    .menu--opened .main-nav__menu-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 35px;
+        height: 100vh;
+        overflow-y: auto;
+        box-shadow: 0 0 20px rgb(0 0 0 / 15%);
+        width: 72px;
+        z-index: 100;
+    }
+
+    .menu--opened .main-nav__toggle {
+        transform: translateX(72px);
+    }
+
+    .menu--opened .main-nav__address {
+        display: none;
+    }
+
+    .menu--opened .main-nav__list--contacts {
+        display: none;
+    }
+}    
